@@ -1,4 +1,4 @@
-{% extends base.html %}
+{% extends "base.html" %}
 
 {% block content %}
 
@@ -7,11 +7,11 @@
 	<div class="gmask">
 		<ul>
 			<li class="active">
-				<img src="images/img-1.jpg" height="372" width="940" alt="" />
+				<img src="/static/images/img-1.jpg" height="372" width="940" alt="" />
 				<span class="mask"></span>
 			</li>
 			<li>
-				<img src="images/img-1b.jpg" height="372" width="940" alt="" />
+				<img src="/static/images/img-1b.jpg" height="372" width="940" alt="" />
 				<span class="mask"></span>
 			</li>
 		</ul>
@@ -96,26 +96,22 @@
 <section class="section">
 	<div class="box-1">
 		<a href="#" class="visual">
-			<img src="images/img-2.gif" alt="" width="300" height="150" >
+			<img src="/static/images/img-2.gif" alt="" width="300" height="150" >
 			<span class="caption">Random text 1</span>
 		</a>
 	</div>
 	<div class="box-1">
 		<a href="#" class="visual">
-			<img src="images/img-3.gif" alt="" width="300" height="150" >
+			<img src="/static/images/img-3.gif" alt="" width="300" height="150" >
 			<span class="caption">Random text 2</span>
 		</a>
 	</div>
 	<div class="box-1">
 		<a href="#" class="visual">
-			<img src="images/img-4.gif" alt="" width="300" height="150" >
+			<img src="/static/images/img-4.gif" alt="" width="300" height="150" >
 			<span class="caption">Random text 3</span>
 		</a>
 	</div>
 </section>
-<!-- slogan -->
-<div class="slogan">
-	<p><strong>Some Lorem Slogan ipsum dolor sit amet, consectetur adipisicing elit. Deleniti doloribus corrupti libero quidem voluptates nisi.</strong></p>
-</div>
 
 {% endblock content %}
