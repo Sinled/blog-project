@@ -12,11 +12,11 @@
 		<section id="content" class="{% block test %}{% endblock test %}">
 			{% for blog_post in blog_list reversed %}
 				<article class="post post-preview">
-					<a href="/blog_post/{{ blog_post.id }}/" class="visual"><img src="/static/images/img-2.gif" alt="" width="300" height="150" ></a>
+					<a href="/blog/blog_post/{{ blog_post.id }}/" class="visual"><img src="/static/images/img-2.gif" alt="" width="300" height="150" ></a>
 					<div class="text-block">
-						<h1><a href="/blog_post/{{ blog_post.id }}/">{{ blog_post.post_title }}</a></h1>
+						<h1><a href="/blog/blog_post/{{ blog_post.id }}/">{{ blog_post.post_title }}</a></h1>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta blanditiis dignissimos adipisci quas eum labore error numquam similique facilis a dolorum voluptatem <a href="#">alias ea nobis obcaecati</a> nemo provident reiciendis...</p>
-						<a href="/blog_post/{{ blog_post.id }}/" class="btn-more">read more</a>
+						<a href="/blog/blog_post/{{ blog_post.id }}/" class="btn-more">read more</a>
 					</div>
 				</article>
 				
