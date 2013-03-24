@@ -815,6 +815,7 @@ figure {
 	padding: 0 10px 10px 0;
 	font: 400 17px/25px 'Cardo', Times, serif;
 	text-shadow: 1px 1px  #fff;
+	overflow: hidden;
 }
 .post h1 {
 	color: #8a8984;
@@ -831,6 +832,27 @@ figure {
 .post p {
 	margin: 0 0 40px;
 }
+.post-preview {
+	padding: 20px 10px 20px 0;
+	border-top: 1px solid #ceccc9;
+}
+.post-preview:first-child {
+	border: none;
+}
+.post-preview p {
+	margin-bottom: 10px;
+}
+.post .visual {
+	float: left;
+	margin: 0 20px 0 0;
+}
+.post .visual img {
+	display: block;
+}
+.post .text-block {
+	overflow: hidden;
+}
+
 /*sidebar*/
 #sidebar {
 	width: 270px;

@@ -10,5 +10,9 @@ def blog(request):
     return direct_to_template(request, "blog.html")
 
 
+def blog_post(request):
+    return direct_to_template(request, "blog_post.html")
+
+
 def contacts(request):
     return direct_to_template(request, "contacts.html")
