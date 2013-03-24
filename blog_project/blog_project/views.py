@@ -1,9 +1,11 @@
-from django.views.generic.simple import direct_to_template
+from django.shortcuts import render
+from blog_project.apps.blog.models import Blog
 
 
 def news(request):
-    return direct_to_template(request, "news.html")
+    blog_post_list = Blog.objects.all()
+    return render(request, "news.html", {"blog_list": blog_post_list})
 
 
 def contacts(request):
-    return direct_to_template(request, "contacts.html")
+    return render(request, "contacts.html")

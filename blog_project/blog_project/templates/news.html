@@ -29,8 +29,7 @@
 <!-- widget-section -->
 <section class="widget-section section">
 	<div class="widget">
-		<h2><a href="#">Последние новости</a></h2>
-		<!-- news-lsit -->
+		<h2><a href="#">Популярное в блоге</a></h2>
 		<ul class="item-list news-lsit">
 			<li>
 				<h3><a href="#">Lorem ipsum dolor sit.</a></h3>
@@ -47,21 +46,17 @@
 		</ul>
 	</div>
 	<div class="widget">
-		<h2><a href="#">Последнее в блоге</a></h2>
+		<h2><a href="/blog/">Последнее в блоге</a></h2>
 		<!-- news-lsit -->
 		<ul class="item-list news-lsit">
-			<li>
-				<h3><a href="/blog_post/">Consequuntur tenetur molestias neque.</a></h3>
-				<p>Fuga nostrum perspiciatis optio quis unde repudiandae quam qui facere eaque excepturi ipsam et tempore! <a href="/blog_post/" class="btn-more">read more</a></p>
-			</li>
-			<li>
-				<h3><a href="/blog_post/">Incidunt esse adipisci quam.</a></h3>
-				<p>Quam magnam cum quae omnis autem voluptatem asperiores nihil illum dolore qui tenetur odit commodi. <a href="/blog_post/" class="btn-more">read more</a></p>
-			</li>
-			<li>
-				<h3><a href="/blog_post/">Tempora voluptatem quasi reprehenderit!</a></h3>
-				<p>Sint accusantium aliquam a fugiat eum maxime quaerat aperiam numquam modi nesciunt minima inventore molestias. <a href="/blog_post/" class="btn-more">read more</a></p>
-			</li>
+			{% for blog_post in blog_list reversed  %}
+				{% if forloop.counter < 4 %}
+					<li>
+						<h3><a href="/blog/{{ blog_post.id }}/">{{ blog_post.post_title }}</a></h3>
+						<p>Fuga nostrum perspiciatis optio quis unde repudiandae quam qui facere eaque excepturi ipsam et tempore! <a href="/blog/{{ blog_post.id }}/" class="btn-more">read more</a></p>
+					</li>
+				{% endif %}
+			{% endfor %}
 		</ul>
 	</div>
 	<div class="widget">
