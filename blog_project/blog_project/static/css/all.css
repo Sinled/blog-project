@@ -824,6 +824,11 @@ figure {
 	margin: 0 0 21px;
 	font-weight: 700;
 }
+.post-preview h1 {
+	margin-bottom: 10px;
+	font-size: 28px;
+	line-height: 30px;
+}
 .post h2 {
 	font: 400 italic 25px/26px 'Muli', Arial, Helvetica, sans-serif;
 	color: #c4401e;
