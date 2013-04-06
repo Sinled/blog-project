@@ -29,33 +29,25 @@
 <!-- widget-section -->
 <section class="widget-section section">
 	<div class="widget">
-		<h2><a href="#">Популярное в блоге</a></h2>
+		<h2><a href="/blog/">Популярное в блоге</a></h2>
 		<ul class="item-list news-lsit">
-			<li>
-				<h3><a href="#">Lorem ipsum dolor sit.</a></h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam tempora vel ex eaque quasi necessitatibus. <a href="#" class="btn-more">read more</a></p>
-			</li>
-			<li>
-				<h3><a href="#">Dignissimos modi unde cupiditate.</a></h3>
-				<p>Optio saepe quam laudantium vero odit accusamus eum excepturi nihil. Eos soluta cumque tenetur mollitia. <a href="#" class="btn-more">read more</a></p>
-			</li>
-			<li>
-				<h3><a href="#">Facilis quas earum itaque?</a></h3>
-				<p>Quasi perferendis ratione consequuntur natus laudantium repellendus harum aspernatur fuga aut omnis animi temporibus esse. <a href="#" class="btn-more">read more</a></p>
-			</li>
+			{% for blog_post in blog_popular_post_list  %}
+				<li>
+					<h3><a href="/blog/blog_post/{{ blog_post.id }}/">{{ blog_post.post_title }}</a></h3>
+					<p>{{ blog_post.post_text|striptags|truncatewords:16 }} <a href="/blog/blog_post/{{ blog_post.id }}/" class="btn-more">read more</a></p>
+				</li>
+			{% endfor %}
 		</ul>
 	</div>
 	<div class="widget">
 		<h2><a href="/blog/">Последнее в блоге</a></h2>
 		<!-- news-lsit -->
 		<ul class="item-list news-lsit">
-			{% for blog_post in blog_list reversed  %}
-				{% if forloop.counter < 4 %}
-					<li>
-						<h3><a href="/blog/blog_post/{{ blog_post.id }}/">{{ blog_post.post_title }}</a></h3>
-						<p>Fuga nostrum perspiciatis optio quis unde repudiandae quam qui facere eaque excepturi ipsam et tempore! <a href="/blog/blog_post/{{ blog_post.id }}/" class="btn-more">read more</a></p>
-					</li>
-				{% endif %}
+			{% for blog_post in blog_list  %}
+				<li>
+					<h3><a href="/blog/blog_post/{{ blog_post.id }}/">{{ blog_post.post_title }}</a></h3>
+					<p>{{ blog_post.post_text|striptags|truncatewords:16 }} <a href="/blog/blog_post/{{ blog_post.id }}/" class="btn-more">read more</a></p>
+				</li>
 			{% endfor %}
 		</ul>
 	</div>
@@ -63,27 +55,15 @@
 		<h2><a href="#">Избранное</a></h2>
 		<!-- item-list-2 -->
 		<ul class="item-list item-list-2">
+			{% for blog_post in blog_favorite_post_list %}
 			<li>
-				<h3 class="short"><a href="#">Lorem ipsum dolor sit.</a></h3>
+				<h3 class="short"><a href="/blog/blog_post/{{ blog_post.id }}/">{{ blog_post.post_title }}</a></h3>
 				<div class="meta">
 					<span class="date">March 11, 2012</span>
 					<span class="author">Some Username</span>
 				</div>
 			</li>
-			<li>
-				<h3 class="short"><a href="#">Minus unde facilis incidunt.</a></h3>
-				<div class="meta">
-					<span class="date">March 11, 2012</span>
-					<span class="author">Some Username</span>
-				</div>
-			</li>
-			<li>
-				<h3 class="short"><a href="#">Molestiae ab sit veniam!</a></h3>
-				<div class="meta">
-					<span class="date">March 11, 2012</span>
-					<span class="author">Some Username</span>
-				</div>
-			</li>
+			{% endfor %}
 		</ul>
 	</div>
 </section>

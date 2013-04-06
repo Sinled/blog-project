@@ -9,10 +9,10 @@ class PostType(models.Model):
 
 
 class Blog(models.Model):
-    post_type = models.ForeignKey(PostType)
+    post_type = models.ForeignKey(PostType, blank=True, null=True)
     post_title = models.CharField(max_length=200)
     post_text = models.TextField()
-    # post_illustration = models.ImageField(upload_to='')
+    post_illustration = models.ImageField(upload_to='img', blank=True, null=True)
 
     def __unicode__(self):
-        return "[%s]" % (self.post_title)
+        return "[{0}]".format(self.post_title)

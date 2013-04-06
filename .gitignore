@@ -2,3 +2,6 @@
 *.pyo
 env
 .env
+.ropeproject
+.idea
+*.sublime*
